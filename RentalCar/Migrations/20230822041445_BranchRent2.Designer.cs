@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RentalCar.Data;
 
@@ -11,9 +12,10 @@ using RentalCar.Data;
 namespace RentalCar.Migrations
 {
     [DbContext(typeof(RentalCarDataContext))]
-    partial class RentalCarDataContextModelSnapshot : ModelSnapshot
+    [Migration("20230822041445_BranchRent2")]
+    partial class BranchRent2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

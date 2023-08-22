@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using RentalCar.Data;
+using RentalCar.Repository;
+using RentalCar.Repository.IRepositories;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -65,7 +67,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IBranchRepo, BranchRentRepo>();
 
 var app = builder.Build();
 
